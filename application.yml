@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # BUG-02: Bat buoc phai dung JsonSerializer cho value-serializer thay vi StringSerializer de gui doi tuong phuc tap
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
